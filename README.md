@@ -1,6 +1,8 @@
 # Mind is a personal journal (diary) application.
 Designed for simple and fast entry of spontaneous thoughts, ideas, and reflections. The journal is stored in a plaintext file and can be read in the terminal or in a web browser. The journal is stored in markdown format and will be converted to html on the fly and opened in your default web browser when the `mindreader` program is used.
 
+<img src="images/example.png" alt="Example image" width="600"/>
+
 ## Installation
 simply run `make install` in the root directory of the project.
 
