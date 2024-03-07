@@ -1,0 +1,10 @@
+# Gnome Desktop file
+
+[Desktop Entry]
+Name=mind
+Comment=Open Mind journal keeper
+Exec=/home/USERNAME/.local/bin/mind
+Icon=/home/USERNAME/.local/share/icons/mind.png
+Terminal=false
+Type=Application
+Categories=Office;
