@@ -2,9 +2,10 @@
 
 [Desktop Entry]
 Name=mind
-Comment=Open Mind journal keeper
-Exec=/home/USERNAME/.local/bin/mind
+Comment="Open Mind journal keeper"
+Exec=/home/USERNAME/.local/bin/mind -z
 Icon=/home/USERNAME/.local/share/icons/mind.png
 Terminal=false
 Type=Application
-Categories=Office;
+Categories=Utility
+X-Desktop-File-Install-Version=0.27

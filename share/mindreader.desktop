@@ -2,9 +2,9 @@
 
 [Desktop Entry]
 Name=mindreader
-Comment="Open Mind journal keeper"
+Comment="Open Mind journal reader"
 Exec=/home/USERNAME/.local/bin/mindreader
 Icon=/home/USERNAME/.local/share/icons/mindreader.png
 Terminal=false
 Type=Application
-Categories=Office;
+Categories=Utility

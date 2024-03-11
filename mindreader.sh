@@ -6,7 +6,7 @@
 
 # check if journal exists
 if [ ! -s ~/.journal.md ]; then
-    echo "No journal for the user: $USER found. Please start by running the 'mind' program and taking down your thoughts"
+    echo "No journal for the user: $USER found. Please start by running the 'mind' program and making a first entry!"
     exit 1
 fi
 
@@ -14,12 +14,9 @@ mkdir -p /tmp/"$USER"
 touch /tmp/"$USER"/journal.html
 chmod 600 /tmp/"$USER"/journal.html
 
-cp css/tufte.css /tmp/"$USER"/journal.css
-
-pandoc -s --toc --metadata title="The private journal of $USER" -c /tmp/"$USER"/journal.css ~/.journal.md -o /tmp/"$USER"/journal.html
+pandoc -s --toc --metadata title="Welcome to the private journal of $USER" -c /home/"$USER"/.local/share/applications/mind/tufte.css ~/.journal.md -o /tmp/"$USER"/journal.html
 xdg-open /tmp/"$USER"/journal.html
 
 sleep 2
 
 rm /tmp/"$USER"/journal.html
-rm /tmp/"$USER"/journal.css

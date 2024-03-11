@@ -17,6 +17,8 @@ install:
 	cp images/mindreader.png ~/.local/share/icons/mindreader.png
 	sed 's/USERNAME/$(shell whoami)/g' share/mind.desktop > ~/.local/share/applications/mind.desktop
 	sed 's/USERNAME/$(shell whoami)/g' share/mindreader.desktop > ~/.local/share/applications/mindreader.desktop
+	mkdir -p ~/.local/share/applications/mind
+	cp css/tufte.css ~/.local/share/applications/mind/tufte.css
 	update-desktop-database ~/.local/share/applications
 	###
 	# Installed mind and mindreader, the journal file ~/.journal.md was created if it did not exist.
@@ -30,6 +32,7 @@ uninstall:
 	rm ~/.local/share/icons/mindreader.png
 	rm ~/.local/share/applications/mind.desktop
 	rm ~/.local/share/applications/mindreader.desktop
+	rm -r ~/.local/share/applications/mind
 	update-desktop-database ~/.local/share/applications
 	###
 	# Uninstalled mind and mindreader, the journal file ~/.journal.md was not removed.
