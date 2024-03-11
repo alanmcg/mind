@@ -38,3 +38,9 @@ uninstall:
 	# Uninstalled mind and mindreader, the journal file ~/.journal.md was not removed.
 	# I hope you enjoyed this tool.
 	###
+
+reinstall: uninstall install
+	###
+	# Reinstalled mind and mindreader, the journal file ~/.journal.md was not removed.
+	# I hope you enjoy this tool.
+	###
