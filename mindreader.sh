@@ -10,13 +10,10 @@ if [ ! -s ~/.journal.md ]; then
     exit 1
 fi
 
-mkdir -p /tmp/"$USER"
-touch /tmp/"$USER"/journal.html
-chmod 600 /tmp/"$USER"/journal.html
+# create temporary file
+tmpfile=$(mktemp /tmp/tmp.XXXXXX)
 
-pandoc -s --toc --metadata title="Welcome to the private journal of $USER" -c /home/"$USER"/.local/share/applications/mind/tufte.css ~/.journal.md -o /tmp/"$USER"/journal.html
-xdg-open /tmp/"$USER"/journal.html
+pandoc -s --toc --metadata title="Welcome to the private journal of $USER" -c /home/"$USER"/.local/share/applications/mind/tufte.css ~/.journal.md >"$tmpfile"
 
-sleep 2
-
-rm /tmp/"$USER"/journal.html
+xdg-open "$tmpfile"
+sleep 5 && rm "$tmpfile"
