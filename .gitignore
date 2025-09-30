@@ -2,3 +2,5 @@
 *.tmp
 *.html
 *tmp
+.venv/
+__pycache__/

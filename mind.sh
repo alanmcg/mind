@@ -36,6 +36,7 @@ entry() {
 
 if [ ! -s ~/.journal.md ]; then
     touch ~/.journal.md
+    chmod 600 ~/.journal.md
 fi
 
 cp ~/.journal.md ~/.journal.md.live

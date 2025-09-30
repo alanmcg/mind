@@ -6,8 +6,6 @@ $(error "It is not required to install this script as root. Run 'make install' a
 endif
 
 install:
-	touch ~/.journal.md
-	chmod 600 ~/.journal.md
 	mkdir -p ~/.local/bin ~/.local/share/icons ~/.local/share/applications
 	cp mind.sh ~/.local/bin/mind
 	cp mindreader.sh ~/.local/bin/mindreader
@@ -21,7 +19,7 @@ install:
 	cp css/tufte.css ~/.local/share/applications/mind/tufte.css
 	update-desktop-database ~/.local/share/applications
 	###
-	# Installed mind and mindreader, the journal file ~/.journal.md was created if it did not exist.
+	# Installed mind and mindreader
 	###
 
 

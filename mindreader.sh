@@ -10,13 +10,16 @@ if [ ! -s ~/.journal.md ]; then
     exit 1
 fi
 
-mkdir -p /tmp/"$USER"
-touch /tmp/"$USER"/journal.html
-chmod 600 /tmp/"$USER"/journal.html
+# create temporary directory
+tmpfile=$(mktemp -d /tmp/mindreader.XXXXXX)
+cp /home/"$USER"/.local/share/applications/mind/tufte.css "$tmpfile/tufte.css"
+pandoc --toc --metadata title="Welcome to the private journal of $USER" -H "$tmpfile"/tufte.css ~/.journal.md >"$tmpfile"/index.html
 
-pandoc -s --toc --metadata title="Welcome to the private journal of $USER" -c /home/"$USER"/.local/share/applications/mind/tufte.css ~/.journal.md -o /tmp/"$USER"/journal.html
-xdg-open /tmp/"$USER"/journal.html
+cd "$tmpfile" || exit
+python3 -m http.server 8082 &
 
-sleep 2
+xdg-open http://localhost:8082/
 
-rm /tmp/"$USER"/journal.html
+sleep 3 && rm -rf "$tmpfile" && kill $! 2>/dev/null
+
+# sleep 5 && rm -rf "$tmpfile"
